@@ -25,7 +25,12 @@ public class Vector {
 	}
 	
 	public boolean contains(Student student) {
-		
+		for (int i = 0; i < this.studentTotal; i++) {
+			if (student.equals(this.students[i])) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public int size() {
