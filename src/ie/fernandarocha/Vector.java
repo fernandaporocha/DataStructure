@@ -55,5 +55,9 @@ public class Vector {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	private boolean isPositonOccupied(int position) {
+		return position >=0 && position < this.studentTotal;
+	}
 
 }
