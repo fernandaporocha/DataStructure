@@ -48,7 +48,7 @@ public class Vector {
 		
 		builder.append(this.students[this.studentTotal -1]);
 		builder.append("]");
-		return Arrays.toString(students);
+		return builder.toString();
 	}
 
 }
