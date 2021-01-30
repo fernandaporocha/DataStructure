@@ -17,7 +17,10 @@ public class Vector {
 	}
 	
 	public Student get(int position) {
-		
+		if(!this.isPositonOccupied(position)) {
+			throw new IllegalArgumentException("Invalid Position");
+		}
+		return this.students[position];
 	}
 	
 	public void remove(int position) {
