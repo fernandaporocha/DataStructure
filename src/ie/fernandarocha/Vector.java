@@ -33,6 +33,21 @@ public class Vector {
 	}
 	
 	public String toString() {
+		
+		if(this.studentTotal == 0) {
+			return "[]";
+		}
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append("[");
+		
+		for (int i = 0; i < this.studentTotal -1; i++) {
+			builder.append(this.students[i]);
+			builder.append(", ");
+		}
+		
+		builder.append(this.students[this.studentTotal -1]);
+		builder.append("]");
 		return Arrays.toString(students);
 	}
 
