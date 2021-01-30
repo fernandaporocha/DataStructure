@@ -29,7 +29,7 @@ public class Vector {
 	}
 	
 	public int size() {
-		
+		return this.studentTotal;
 	}
 	
 	public String toString() {
