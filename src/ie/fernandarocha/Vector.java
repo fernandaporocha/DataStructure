@@ -5,14 +5,11 @@ import java.util.Arrays;
 public class Vector {
 	
 	private Student[] students = new Student[100];
+	private int studentTotal = 0;
 	
 	public void add(Student student) {
-		for(int i = 0; i < this.students.length; i++) {
-			if(this.students[i]==null) {
-				this.students[i] = student;
-				break;
-			}
-		}	
+		this.students[this.studentTotal] = student;
+		this.studentTotal++;
 	}
 	
 	public void add(int position, Student student) {
