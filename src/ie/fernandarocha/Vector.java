@@ -13,7 +13,16 @@ public class Vector {
 	}
 	
 	public void add(int position, Student student) {
+		if(!this.isValidPositon(position)) {
+			throw new IllegalArgumentException("Invalid Position");
+		}
 		
+		for (int i = this.studentTotal -1; i >= position; i--) {
+			this.students[i+1] = this.students[i];
+		}
+		
+		this.students[position] = student;
+		this.studentTotal++;
 	}
 	
 	public Student get(int position) {
@@ -61,6 +70,10 @@ public class Vector {
 	
 	private boolean isPositonOccupied(int position) {
 		return position >=0 && position < this.studentTotal;
+	}
+	
+	private boolean isValidPositon(int position) {
+		return position >=0 && position <= this.studentTotal;
 	}
 
 }
