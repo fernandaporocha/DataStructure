@@ -8,11 +8,13 @@ public class Vector {
 	private int studentTotal = 0;
 	
 	public void add(Student student) {
+		this.checkSize();
 		this.students[this.studentTotal] = student;
 		this.studentTotal++;
 	}
 	
 	public void add(int position, Student student) {
+		this.checkSize();
 		if(!this.isValidPositon(position)) {
 			throw new IllegalArgumentException("Invalid Position");
 		}
