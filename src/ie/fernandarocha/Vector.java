@@ -33,7 +33,13 @@ public class Vector {
 	}
 	
 	public void remove(int position) {
-		
+		if (!this.isPositonOccupied(position)) {
+			throw new IllegalArgumentException("Invalid position");
+		}
+		for(int i = position; i < this.studentTotal -1; i++) {
+			this.students[i] = this.students[i+1];
+		}
+		this.studentTotal--;
 	}
 	
 	public boolean contains(Student student) {
