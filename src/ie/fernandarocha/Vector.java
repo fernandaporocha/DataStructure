@@ -81,5 +81,15 @@ public class Vector {
 	private boolean isValidPositon(int position) {
 		return position >=0 && position <= this.studentTotal;
 	}
+	
+	private void checkSize() {
+		if(this.studentTotal == this.students.length) {
+			Student[] newArray = new Student[this.students.length*2];
+			for (int i = 0; i < this.students.length; i++) {
+				newArray[i] = this.students[i];
+			}
+			this.students = newArray;
+		}
+	}
 
 }
