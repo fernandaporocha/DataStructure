@@ -12,8 +12,8 @@ public class GetByPositionTest {
 		Vector list = new Vector();
 		list.add(s1);
 		list.add(s2);
-		Student student1 = list.get(0);
-		Student student2 = list.get(1);
+		Student student1 = (Student)list.get(0);
+		Student student2 = (Student)list.get(1);
 		System.out.println(student1);
 		System.out.println(student2);
 	}
