@@ -1,15 +1,13 @@
 package ie.fernandarocha;
 
-import java.util.Arrays;
-
 public class Vector {
 	
-	private Student[] students = new Student[100];
+	private Object[] objects = new Object[100];
 	private int studentTotal = 0;
 	
 	public void add(Student student) {
 		this.checkSize();
-		this.students[this.studentTotal] = student;
+		this.objects[this.studentTotal] = student;
 		this.studentTotal++;
 	}
 	
@@ -20,18 +18,18 @@ public class Vector {
 		}
 		
 		for (int i = this.studentTotal -1; i >= position; i--) {
-			this.students[i+1] = this.students[i];
+			this.objects[i+1] = this.objects[i];
 		}
 		
-		this.students[position] = student;
+		this.objects[position] = student;
 		this.studentTotal++;
 	}
 	
-	public Student get(int position) {
+	public Object get(int position) {
 		if(!this.isPositonOccupied(position)) {
 			throw new IllegalArgumentException("Invalid Position");
 		}
-		return this.students[position];
+		return this.objects[position];
 	}
 	
 	public void remove(int position) {
@@ -39,14 +37,14 @@ public class Vector {
 			throw new IllegalArgumentException("Invalid position");
 		}
 		for(int i = position; i < this.studentTotal -1; i++) {
-			this.students[i] = this.students[i+1];
+			this.objects[i] = this.objects[i+1];
 		}
 		this.studentTotal--;
 	}
 	
 	public boolean contains(Student student) {
 		for (int i = 0; i < this.studentTotal; i++) {
-			if (student.equals(this.students[i])) {
+			if (student.equals(this.objects[i])) {
 				return true;
 			}
 		}
@@ -67,11 +65,11 @@ public class Vector {
 		builder.append("[");
 		
 		for (int i = 0; i < this.studentTotal -1; i++) {
-			builder.append(this.students[i]);
+			builder.append(this.objects[i]);
 			builder.append(", ");
 		}
 		
-		builder.append(this.students[this.studentTotal -1]);
+		builder.append(this.objects[this.studentTotal -1]);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -85,12 +83,12 @@ public class Vector {
 	}
 	
 	private void checkSize() {
-		if(this.studentTotal == this.students.length) {
-			Student[] newArray = new Student[this.students.length*2];
-			for (int i = 0; i < this.students.length; i++) {
-				newArray[i] = this.students[i];
+		if(this.studentTotal == this.objects.length) {
+			Object[] newArray = new Object[this.objects.length*2];
+			for (int i = 0; i < this.objects.length; i++) {
+				newArray[i] = this.objects[i];
 			}
-			this.students = newArray;
+			this.objects = newArray;
 		}
 	}
 
